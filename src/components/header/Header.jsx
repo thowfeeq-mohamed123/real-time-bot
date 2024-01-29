@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { LogoutModal } from "../logout-modal/LogoutModal";
 import "./Header.css";
 
 export class Header extends React.Component {
@@ -19,18 +19,7 @@ export class Header extends React.Component {
       <div style={{ display: "block", width: "100%", height: "15%" }}>
         <Navbar bg="dark" variant="dark" style={{ height: "57%" }}>
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text
-              style={{
-                fontWeight: "bold",
-                color: "white",
-                cursor: "pointer",
-                padding: "10px 20px",
-              }}
-              onClick={this.logout}
-            >
-              Logout
-            </Navbar.Text>
-            {this.state.logout && <Navigate to="/login" replace={true} />}
+            <LogoutModal />
           </Navbar.Collapse>
         </Navbar>
       </div>

@@ -31,7 +31,7 @@ export class Login extends React.Component {
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-4">
-                  <h2 className="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                  <h2 className="fw-bold mb-2 text-uppercase">Sign In</h2>
 
                   <Form className="mb-3" onSubmit={this.handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 const SideBar = () => {
   return (
     <div
-      style={{ display: "flex", height: "100vh", overflow: "scroll initial" }}
+      style={{ display: "flex", height: "100%", overflow: "scroll initial" }}
     >
       <CDBSidebar textColor="#fff" backgroundColor="#2c4053">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
@@ -26,7 +26,7 @@ const SideBar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink to="/" className="activeClicked">
+            <NavLink to="/dashboard" className="activeClicked">
               <CDBSidebarMenuItem
                 icon="columns"
                 style={{ backgroundColor: "#2c4053", color: "#FFFFFF" }}
