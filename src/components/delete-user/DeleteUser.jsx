@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 
-export class DeleteModal extends React.Component {
+export class DeleteUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

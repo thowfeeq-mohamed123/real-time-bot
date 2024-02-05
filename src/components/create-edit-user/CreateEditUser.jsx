@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
-export class CreateEditModal extends React.Component {
+export class CreateEditUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

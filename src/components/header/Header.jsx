@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
-import { LogoutModal } from "../logout-modal/LogoutModal";
+import { Logout } from "../logout/Logout";
 import "./Header.css";
 
 export class Header extends React.Component {
@@ -19,7 +19,7 @@ export class Header extends React.Component {
       <div style={{ display: "block", width: "100%", height: "15%" }}>
         <Navbar bg="dark" variant="dark" style={{ height: "57%" }}>
           <Navbar.Collapse className="justify-content-end">
-            <LogoutModal />
+            <Logout />
           </Navbar.Collapse>
         </Navbar>
       </div>

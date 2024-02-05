@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Modal, Navbar } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 
-export class LogoutModal extends React.Component {
+export class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

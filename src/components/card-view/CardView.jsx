@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { faker } from "@faker-js/faker";
 import { Button } from "react-bootstrap";
 import DataTable from "react-data-table-component";
-import { CreateEditModal } from "../create-edit-modal/CreateEditModal";
-import { DeleteModal } from "../delete-modal/DeleteModal";
+import { DeleteUser } from "../delete-user/DeleteUser";
+import { CreateEditUser } from "../create-edit-user/CreateEditUser";
 
 const createUser = () => ({
   id: faker.string.uuid(),
@@ -85,8 +85,8 @@ const columns = [
     name: "Action",
     cell: (row) => (
       <>
-        <CreateEditModal isEdit={true} userInfo={row} />
-        <DeleteModal />
+        <CreateEditUser isEdit={true} userInfo={row} />
+        <DeleteUser />
       </>
     ),
   },
@@ -169,7 +169,7 @@ export const CardView = () => {
   const actionsMemo = useMemo(
     () => (
       <div className="d-grid gap-2 d-md-flex">
-        <CreateEditModal isEdit={false} />
+        <CreateEditUser isEdit={false} />
         <Export onExport={() => downloadCSV(filteredItems)} />
       </div>
     ),
