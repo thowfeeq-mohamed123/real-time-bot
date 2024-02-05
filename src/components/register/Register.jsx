@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 import "../../App.css";
 
 export class Register extends React.Component {
@@ -9,8 +11,9 @@ export class Register extends React.Component {
     this.state = {
       fullName: "",
       email: "",
-      phoneNumber: "",
+      phone: "",
       password: "",
+      shouldRedirect: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,9 +23,22 @@ export class Register extends React.Component {
     this.setState({ ...this.state, [e.target.name]: e.target.value });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    console.log("this.state ==== ", this.state);
+    axios
+      .post(`http://localhost:5001/newUser`, this.state)
+      .then((res) => {
+        if (res.status === 200) {
+          toast.success("Register successfully!");
+          setInterval(() => {
+            this.setState({ shouldRedirect: true });
+          }, 1000);
+        }
+      })
+      .catch((error) => {
+        toast.error("Register failed!");
+        console.error(error);
+      });
   }
 
   render() {
@@ -73,7 +89,7 @@ export class Register extends React.Component {
                       <Form.Control
                         type="number"
                         placeholder="Enter phone number"
-                        name="phoneNumber"
+                        name="phone"
                         onChange={this.handleChange}
                         required
                       />
@@ -104,10 +120,13 @@ export class Register extends React.Component {
                       </Button>
                     </div>
                   </Form>
-
+                  <ToastContainer />
+                  {this.state.shouldRedirect ? (
+                    <Navigate replace to="/login" />
+                  ) : null}
                   <div className="mt-3">
                     <p className="mb-0  text-center">
-                      Don't have an account? <Link to="/login">Sign In</Link>
+                      Do you have an account? <Link to="/login">Sign In</Link>
                     </p>
                   </div>
                 </div>

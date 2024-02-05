@@ -7,6 +7,7 @@ import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { ForgotPassword } from "./components/forgot-password/ForgotPassword";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-toastify/dist/ReactToastify.css";
 import { Dashboard } from "./components/dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

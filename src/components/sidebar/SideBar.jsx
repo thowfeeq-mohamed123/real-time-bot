@@ -15,13 +15,7 @@ const SideBar = () => {
     >
       <CDBSidebar textColor="#fff" backgroundColor="#2c4053">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          <a
-            href="/"
-            className="text-decoration-none"
-            style={{ color: "inherit" }}
-          >
-            RealTime Bot
-          </a>
+          <h5>RealTime Bot</h5>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
